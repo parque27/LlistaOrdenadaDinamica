@@ -3,28 +3,39 @@
 #include "Fitxa.h"
 class LlistaOrdenada
 {
-public:
-	LlistaOrdenada();
-	LlistaOrdenada(const LlistaOrdenada& o);
-	~LlistaOrdenada();
-	LlistaOrdenada& operator= (const LlistaOrdenada& o);
+	public:
+		// CONSTRUCTUROS
+		LlistaOrdenada();
+		LlistaOrdenada(const LlistaOrdenada& o);
 
-	bool es_buida() const;
-	bool existeix(Fitxa f) const;
-	void mostrar() const;
+		// DESTRUCTOR
+		~LlistaOrdenada();
 
-	void inserir(Fitxa f);
-	void eliminar(Fitxa f);
+		// OPERADORS
+		LlistaOrdenada& operator= (const LlistaOrdenada& o);
 
-private:
-	struct Node
-	{
-		Fitxa f;
-		Node* seg;
-	};
-	Node* a_inici;
+		// METODES CONSULTORS
+		bool es_buida() const;
+		bool existeix(Fitxa f) const;
+		void mostrar() const;
 
-	void copia(const LlistaOrdenada& o);
-	void allibera();
+		// METODES MODIFICADORS
+		void inserir(Fitxa f);
+		void eliminar(Fitxa f);
+
+	private:
+		// ESTRUCTURA DE DADES
+		struct Node
+		{
+			Fitxa f;
+			Node* seg;
+		};
+
+		// ATRIBUTS
+		Node* a_inici;
+
+		// METODES D'INSTANCIA
+		void copia(const LlistaOrdenada& o);
+		void allibera();
 };
 #endif // !LLISTAORDENADA_H
