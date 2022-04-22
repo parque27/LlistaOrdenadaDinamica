@@ -16,12 +16,27 @@ Fitxa::Fitxa(char element, int valor)
 	a_valor = valor;
 }
 // OPERADORS
+bool Fitxa::operator==(const Fitxa& f)
+{
+	return a_tipus == f.a_tipus and a_valor == f.a_valor;
+}
 bool Fitxa::operator<(const Fitxa& f)
 {
-	bool es_menor = a_tipus < f.a_tipus;
-	if (a_tipus == f.a_tipus) es_menor = a_valor < f.a_valor;
-	return es_menor;
+	return a_tipus < f.a_tipus or (a_tipus == f.a_tipus and a_valor < f.a_valor);
 }
+bool Fitxa::operator>(const Fitxa& f)
+{
+	return a_tipus > f.a_tipus or (a_tipus == f.a_tipus and a_valor > f.a_valor);
+}
+bool Fitxa::operator<=(const Fitxa& f)
+{
+	return (*this) < f or (*this) == f;
+}
+bool Fitxa::operator>=(const Fitxa& f)
+{
+	return not((*this) < f);
+}
+
 // METODES CONSULTORS
 void Fitxa::mostra() const
 {
