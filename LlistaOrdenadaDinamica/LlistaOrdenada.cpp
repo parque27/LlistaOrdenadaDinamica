@@ -45,9 +45,9 @@ bool LlistaOrdenada::existeix(Fitxa f) const
 		{
 			fi_cerca = true;
 			trobada = p->f == f;
-		}
-		else p = p->seg;
+		} else p = p->seg;
 	}
+	return trobada;
 }
 void LlistaOrdenada::mostrar() const
 {
