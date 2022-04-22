@@ -13,15 +13,15 @@ public:
 	// Pre: --; Post: la fitxa te els parametres passats per constructor
 
 	// OPERADORS
-	bool operator == (const Fitxa& f);
+	bool operator == (const Fitxa& f) const;
 	// Pre: --; Post: retorna true si aquesta fitxa es igual que f, fals altrament
-	bool operator < (const Fitxa& f);
+	bool operator < (const Fitxa& f) const;
 	// Pre: --; Post: retorna true si aquesta fitxa es menor que f, fals altrament
-	bool operator > (const Fitxa& f);
+	bool operator > (const Fitxa& f) const;
 	// Pre: --; Post: retorna true si aquesta fitxa es major que f, fals altrament
-	bool operator <= (const Fitxa& f);
+	bool operator <= (const Fitxa& f) const;
 	// Pre: --; Post: retorna true si aquesta fitxa es menor o igual que f, fals altrament
-	bool operator >= (const Fitxa& f);
+	bool operator >= (const Fitxa& f) const;
 	// Pre: --; Post: retorna true si aquesta fitxa es major o igual que f, fals altrament
 
 	// METODES CONSULTORS
