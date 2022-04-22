@@ -19,6 +19,16 @@ LlistaOrdenada::~LlistaOrdenada()
 {
 	allibera();
 }
+// OPERADORS
+LlistaOrdenada& LlistaOrdenada::operator=(const LlistaOrdenada& o)
+{
+	if (this != &o)
+	{
+		allibera();
+		copia(o);
+	}
+	return *this;
+}
 // METODES CONSULTORS
 bool LlistaOrdenada::es_buida() const
 {
